@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+        .background{
+            position: absolute;
+            width: 100%;
+            height: 500px;
+            top: 0px;
+            left: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .background img{
+            width: 100%;
+        }
+        .box{
+            position: absolute;
+            top: 350px;
+            left: 0px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .content{
+            width: 70%;
+            border-radius: 35px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        .title{
+            width: 100%;
+            margin-top: 40px;
+        }
+        .subtitle-1, .subtitle-2, .subtitle-3{
+            width: 100%;
+            text-align: center;
+        }
+        .subtitle-1{
+            font-size: 60px;
+        }
+        .subtitle-2{
+            font-size: 50px;
+            margin-top: 20px;
+        }
+        .subtitle-3{
+            font-size: 30px;
+            margin-top: 15px;
+        }
+        .details{
+            width: 100%;
+            margin-top: 100px;
+        }
+        .details-title{
+            width: 100%;
+            text-align: center;
+            font-size: 25px;
+        }
+        .details-subtitle{
+            font-size: 20px;
+        }
+        .details-content{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0px 40px;
+            line-height: 200%;
+            font-size: 16px;
+        }
+        .details-content p{
+            text-indent: 32px;
+        }
+        .agenda{
+            width: 100%;
+            margin-top: 50px;
+        }
+        .agenda-title{
+            width: 100%;
+            text-align: center;
+            font-size: 25px;
+        }
+        .agenda-content{
+            width: 100%;
+            margin-top: 25px;
+            font-size: 16px;
+        }
+        .agenda-content table{
+            width: 100%;
+            text-align: center;
+        }
+        .agenda-content table tr, .agenda-content table td{
+            padding: 5px;
+        }
+
+        @media only screen and (min-width: 0px) and (max-width: 700px){
+            .background{
+                height: 15rem;
+            }
+            .box{
+                top: 12rem;
+            }
+            .content{
+                width: 90%;
+                border-radius: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            .title{
+                margin-top: 2rem;
+            }
+            .subtitle-1{
+                font-size: 2.5rem;
+            }
+            .subtitle-2{
+                font-size: 1.5rem;
+                margin-top: 1.3rem;
+            }
+            .subtitle-3{
+                font-size: 1rem;
+                margin-top: 1rem;
+            }
+            .details{
+                margin-top: 3rem;
+            }
+            .details-title{
+                font-size: 1.5rem;
+            }
+            .details-subtitle{
+                font-size: 1.2rem;
+            }
+            .details-content{
+                padding: 0px 0.5rem;
+                font-size: 1rem;
+            }
+            .details-content p{
+                text-indent: 2rem;
+            }
+            .agenda{
+                margin-top: 2rem;
+            }
+            .agenda-title{
+                font-size: 1.5rem;
+            }
+            .agenda-content{
+                margin-top: 1rem;
+                font-size: 0.8rem;
+            }
+            .agenda-content table tr, .agenda-content table td{
+                padding: 0.2rem;
+            }
+        }
+
+        @media only screen and (min-width: 700px) and (max-width: 1024px){
+            .background{
+                height: 25rem;
+            }
+            .box{
+                top: 19rem;
+            }
+            .content{
+                width: 80%;
+                border-radius: 3rem;
+                margin-bottom: 3rem;
+            }
+            .title{
+                margin-top: 2.5rem;
+            }
+            .subtitle-1{
+                font-size: 4rem;
+            }
+            .subtitle-2{
+                font-size: 2.5rem;
+                margin-top: 1.3rem;
+            }
+            .subtitle-3{
+                font-size: 1.8rem;
+                margin-top: 1rem;
+            }
+            .details{
+                margin-top: 3rem;
+            }
+            .details-title{
+                font-size: 2rem;
+            }
+            .details-subtitle{
+                font-size: 1.5rem;
+            }
+            .details-content{
+                padding: 0px 1rem;
+                font-size: 1rem;
+            }
+            .details-content p{
+                text-indent: 2rem;
+            }
+            .agenda{
+                margin-top: 2rem;
+            }
+            .agenda-title{
+                font-size: 2rem;
+            }
+            .agenda-content{
+                margin-top: 1rem;
+                font-size: 1rem;
+            }
+            .agenda-content table tr, .agenda-content table td{
+                padding: 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <img src="./src/background.jpg" alt="Background"/>
+    </div>
+    <div class="box">
+        <div class="content">
+            <div class="title">
+                <div class="subtitle-1">VisaLon 2021</div>
+                <div class="subtitle-2">机器视觉与机器学习研讨沙龙</div>
+                <div class="subtitle-3">HUST Vision and Learning salon 2021</div>
+            </div>
+            <div class="details">
+                <div class="details-title"><b>沙龙详情</b></div>
+                <div class="details-content">
+                    <p>
+                        沙龙简介<b>沙龙简介</b><i>沙龙简介</i><b><i>沙龙简介</i></b>沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介沙龙简介
+                    </p>
+                    <div class="details-subtitle"><b>一、沙龙目的</b></div>
+                    <p>
+                        分享机器视觉/学习身边新进展、促进交流, 重在讨论参与、激发想法增进合作
+                    </p>
+                    <div class="details-subtitle"><b>二、沙龙时间</b></div>
+                    <p>
+                        2021年12月25日（周六）8:30-18:00
+                    </p>
+                    <div class="details-subtitle"><b>三、沙龙地点</b></div>
+                    <p>
+                        校内（视报名人数来确定）
+                    </p>
+                    <div class="details-subtitle"><b>四、参与人员</b></div>
+                    <p>
+                        相关课题组等校内师生（现场）；不能到场报告人、师生和报名观众（线上）
+                    </p>
+                    <div class="details-subtitle"><b>五、报名链接</b></div>
+                    <p>
+                        <a>https://jinshuju.net/f/aXHIx7</a>
+                    </p>
+                </div>
+            </div>
+            <div class="agenda">
+                <div class="agenda-title"><b>会议议程</b></div>
+                <div class="agenda-content">
+                    <table border="1" align="center" cellpaddind="0" cellspacing="0">
+                        <tr>
+                            <td>主持人</td>
+                            <td>时间</td>
+                            <td>报告人</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="8"></td>
+                            <td>8:30-8:35</td>
+                            <td>日程概述（AIA班子成员）</td>
+                        </tr>
+                        <tr>
+                            <td>8:35-9:00</td>
+                            <td>A1.桑农（AIA）</td>
+                        </tr>
+                        <tr>
+                            <td>9:05-9:30</td>
+                            <td>A2.尤新革（EIC）</td>
+                        </tr>
+                        <tr>
+                            <td>9:35-10:00</td>
+                            <td>A3.陶文兵（AIA）</td>
+                        </tr>
+                        <tr>
+                            <td>10:05-10:30</td>
+                            <td>A4.杨欣（EIC）</td>
+                        </tr>
+                        <tr>
+                            <td>10:35-11:00</td>
+                            <td>A5.伍冬睿（AIA）</td>
+                        </tr>
+                        <tr>
+                            <td>11:05-11:30</td>
+                            <td>A6.王兴刚（EIC）</td>
+                        </tr>
+                        <tr>
+                            <td>11:35-12:00</td>
+                            <td>A7.廖振宇（EIC）</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">午餐午休</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="8"></td>
+                            <td>14:00-14:25</td>
+                            <td>P1.谭毅华（AIA）</td>
+                        </tr>
+                        <tr>
+                            <td>14:30-14:55</td>
+                            <td>P2.杨铀（EIC）</td>
+                        </tr>
+                        <tr>
+                            <td>15:00-15:25</td>
+                            <td>P3.高常鑫（AIA）</td>
+                        </tr>
+                        <tr>
+                            <td>15:30-15:55</td>
+                            <td>P4.魏巍（CS）</td>
+                        </tr>
+                        <tr>
+                            <td>16:00-16:25</td>
+                            <td>P5.肖阳（AIA）</td>
+                        </tr>
+                        <tr>
+                            <td>16:30-16:55</td>
+                            <td>P6.彭勤牧（EIC）</td>
+                        </tr>
+                        <tr>
+                            <td>17:00-17:25</td>
+                            <td>P7.陆昊（AIA）</td>
+                        </tr>
+                        <tr>
+                            <td>17:30-17:55</td>
+                            <td>P8.项翔（AIA）</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
