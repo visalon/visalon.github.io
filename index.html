@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>Visalon 2021</title>
+    <script type="text/javascript" src="./script/jquery-3.6.0.min.js"></script>  
     <style type="text/css">
         .background{
             position: absolute;
@@ -40,6 +41,25 @@
             justify-content: flex-start;
             align-items: center;
             margin-bottom: 60px;
+        }
+        .footer{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            color: gray;
+        }
+        .footer-block{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer-block div{
+            margin-left: 8px;
         }
         .title{
             width: 100%;
@@ -116,6 +136,13 @@
                 border-radius: 1.5rem;
                 margin-bottom: 2rem;
             }
+            .footer{
+                justify-content: center;
+                padding: 0.5rem 1rem;
+            }
+            .footer-block div{
+                margin-left: 0.4rem;
+            }
             .title{
                 margin-top: 2rem;
             }
@@ -172,6 +199,12 @@
                 width: 80%;
                 border-radius: 3rem;
                 margin-bottom: 3rem;
+            }
+            .footer{
+                padding: 0.5rem 1rem;
+            }
+            .footer-block div{
+                margin-left: 0.4rem;
             }
             .title{
                 margin-top: 2.5rem;
@@ -351,6 +384,25 @@
                 </div>
             </div>
         </div>
+        <div class="footer">
+            <div class="footer-block">总点击量: <div id="sum-click"></div>；</div>
+            <div class="footer-block">今日点击量: <div id="today-click"></div>。</div>
+        </div>
     </div>
 </body>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            type: "GET",
+            url: "http://tool.ma-jing.cn/visalon/",
+            dataType: "jsonp",
+			jsonp: "callback",
+            jsonpCallback: "successCallback",
+            success: function(data){
+                $("#sum-click").html(data.sum);
+                $("#today-click").html(data.today);
+            }
+        });
+    });
+</script>
 </html>
